@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.cheblin.slimenum.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.cheblin.slimenum.MyBundle
 
 class MyApplicationService {
 
