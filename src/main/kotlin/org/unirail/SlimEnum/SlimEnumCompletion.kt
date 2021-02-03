@@ -1,3 +1,4 @@
+// Copyright 2021 the original author or authors
 package org.unirail.SlimEnum
 
 import com.intellij.codeInsight.AnnotationUtil
