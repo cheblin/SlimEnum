@@ -1,19 +1,18 @@
 <idea-plugin>
-    <id>com.github.cheblin.slimenum</id>
+    <id>org.unirail.SlimEnum</id>
     <name>SlimEnum</name>
-    <vendor>cheblin</vendor>
+    <version>1.0</version>
+    <vendor email="info@unirail.org" url="http://www.unirail.org">Chikirev Sirguy, Unirail Group</vendor>
+
 
     <!-- Product and plugin compatibility requirements -->
-    <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
+    <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.cheblin.slimenum.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.cheblin.slimenum.services.MyProjectService"/>
+        <completion.contributor language="JAVA"    implementationClass="org.unirail.SlimEnum.SlimEnumCompletion"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.cheblin.slimenum.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
