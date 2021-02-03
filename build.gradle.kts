@@ -64,6 +64,7 @@ detekt {
     config = files("./detekt-config.yml")
     buildUponDefaultConfig = true
 	ignoreFailures =true
+	disableDefaultRuleSets=true
     reports {
         html.enabled = false
         xml.enabled = false
