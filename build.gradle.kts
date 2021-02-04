@@ -110,7 +110,12 @@ tasks {
 				}
 		)
 		
-		
+		// Get the latest available change notes from the changelog file
+		changeNotes(
+				closure {
+					changelog.getLatest().toHTML()
+				}
+		)
 	}
 	
 	runPluginVerifier {
