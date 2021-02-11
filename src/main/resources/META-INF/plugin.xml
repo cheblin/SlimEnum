@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.unirail.SlimEnum</id>
     <name>SlimEnum</name>
-    <version>1.0</version>
+    <version>0.0.3</version>
     <vendor email="info@unirail.org" url="http://www.unirail.org">Chikirev Sirguy, Unirail Group</vendor>
 
 
