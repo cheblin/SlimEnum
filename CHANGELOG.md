@@ -21,5 +21,9 @@
 ### Added 
 ## [0.0.3]
 ### Added
+## [0.0.4]
+### Fixed
+compatibility problems
+
 delete 2020.1.4 Compatibility claim 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
