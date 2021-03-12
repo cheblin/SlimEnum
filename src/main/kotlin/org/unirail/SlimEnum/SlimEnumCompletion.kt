@@ -191,6 +191,7 @@ class SlimEnumCompletion : CompletionContributor() {
                         el.resolve()?.let { dst += it }
                     true
                 }
+
                 return dst
             }
 
