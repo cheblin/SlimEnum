@@ -116,6 +116,10 @@ public class Main {
 		
 		test.fg = Font.Foreground.BLUE;
 		
+		@Font byte[]         array = new byte[10];
+		
+		array[2] = Font.BLINK | Font.BOLD;
+		
 		if (type == (Font.NORMAL | Font.BOLD | Font.INVERSE | Font.BLINK | Font.STRIKE) && test.setBackground( Font.Background.BLUE ) == Font.Background.RED)
 		{
 			@Font.Foreground int text_color = Font.Foreground.CYAN;
