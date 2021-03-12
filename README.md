@@ -151,6 +151,8 @@ public class Main {
 
 ![6](https://user-images.githubusercontent.com/29354319/106712403-dd791f80-6633-11eb-91f3-107b93085024.PNG)
 
+![6](https://user-images.githubusercontent.com/29354319/110890183-7af9fa00-832a-11eb-90b5-7290111d2293.png)
+
 ## Installation
 
 - Using IDE built-in plugin system:
