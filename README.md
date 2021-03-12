@@ -53,6 +53,26 @@ Declare **SlimEnum**
                         CYAN    = 6,
                         WHITE   = 7,
                         DEFAULT = 8;
+		
+		class Validator { //put some related code
+			public static boolean ok( int value ) {
+				switch (value)
+				{
+					case BLACK:
+					case RED:
+					case GREEN:
+					case YELLOW:
+					case BLUE:
+					case MAGENTA:
+					case CYAN:
+					case WHITE:
+					case DEFAULT:
+						return true;
+				}
+				return false;
+			}
+		}
+
 	}
 	
 	@interface Background {
@@ -98,7 +118,7 @@ public class Main {
 		
 		if (type == (Font.NORMAL | Font.BOLD | Font.INVERSE | Font.BLINK | Font.STRIKE) && test.setBackground( Font.Background.BLUE ) == Font.Background.RED)
 		{
-			@Font.Foreground int fgw = Font.Foreground.CYAN;
+			@Font.Foreground int text_color = Font.Foreground.CYAN;
 		}
 		assert (test.setBackground( Font.Background.BLUE ) == (Font.Background.CYAN | Font.Background.DEFAULT));
 		
@@ -108,13 +128,16 @@ public class Main {
 		
 		@Font String fontName = Font.Dialog;
 		
-		switch (test.setBackground( Font.Background.BLUE ))
-		{
-			case Font.Background.BLUE:
-				break;
-			case Font.Background.CYAN:
-				break;
-		}
+		int random_value = 99;
+		
+		if (Font.Foreground.Validator.ok( random_value ))
+			switch (test.setBackground( Font.Background.BLUE ))
+			{
+				case Font.Background.BLUE:
+					break;
+				case Font.Background.CYAN:
+					break;
+			}
 	}
 }
 ```
