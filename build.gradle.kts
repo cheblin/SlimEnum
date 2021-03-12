@@ -40,7 +40,8 @@ intellij {
 // Configure gradle-changelog-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
-    version = properties("pluginVersion")
+    version = "0.0.5"
+    //version = properties("pluginVersion")
     groups = emptyList()
 }
 
