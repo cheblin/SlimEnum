@@ -15,15 +15,17 @@ But this has some limitation: no compile-time check and no IDEA code completion 
 
 The root of the problem is that the Java type system does not support the building of new types by extending primitives.
 
-This plugin is utilized java annotation construction, to declare the named
+It is possible to utiliz java annotation to declare the named
 constants set and bind it to primitive type variables, fields, methods
-arguments, and return type.
+arguments and return type.
 
-With this plugin, IDE getting smart code completion capability.
+With this plugin, IDE gets smart code completion capability.
 
-SlimEnum is not a total replacement for Java language embedded enums, it is an addition in the case when performance is a concern and primitive constants can be used.
+SlimEnum is alternative approach, especially good in the case when performance is a concern and primitive constants can be better used.
+SlimEnum is not a total replacement for Java language embedded enums, of course.
 <!-- Plugin description end -->
-Step-by-step guide
+
+## Step-by-step guide
 
 Declare **SlimEnum**
 ```java
