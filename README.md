@@ -15,7 +15,7 @@ But this has some limitation: no compile-time check and no IDEA code completion 
 
 The root of the problem is that the Java type system does not support the building of new types by extending primitives.
 
-It is possible to utiliz java annotation to declare the named
+It is possible to utilize java annotation to declare the named
 constants set and bind it to primitive type variables, fields, methods
 arguments and return type.
 
