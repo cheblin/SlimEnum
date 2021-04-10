@@ -8,7 +8,7 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.4.31"
+    id("org.jetbrains.kotlin.jvm") version "1.4.32"
     // gradle-intellij-plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
     id("org.jetbrains.intellij") version "0.7.2"
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
@@ -40,9 +40,9 @@ intellij {
 // Configure gradle-changelog-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
-    version = "0.0.5"
-    //version = properties("pluginVersion")
+    version = properties("pluginVersion")
     groups = emptyList()
+
 }
 
 tasks {
@@ -63,7 +63,7 @@ tasks {
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription(
                 closure {
-                    File("./README.md").readText().lines().run {
+                File(projectDir, "README.md").readText().lines().run {
                         val start = "<!-- Plugin description -->"
                         val end = "<!-- Plugin description end -->"
 

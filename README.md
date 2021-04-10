@@ -4,14 +4,14 @@
 Well known, that in some use cases Java enums are [not so good](https://youtu.be/Hzs6OBcvNQE) as they
 could be.
 
-The drawback of Java enums is especially obvious when they are heavy used in high loaded systems, whenever performance and memory consumptions are crucial.
+The drawback of Java enums is especially obvious when they are heavy used in high loaded systems, 
+whenever performance and memory consumptions are crucial.
 
-To overcome this problem developers use simple primitive type constants instead of enums.
+To overcome this problem developers use simple, primitive type constants instead of enums.
 
-The advantage of this solution is its lightweight, natural, fit to build as
-simple enums, as flags.
+The advantage of this solution is its lightweight, natural, fit to build as simple enums, as flags.
 
-But this has some limitation: no compile-time check and no IDEA code completion support
+But this has some limitation: no compile-time check and no IDEA code completion support.
 
 The root of the problem is that the Java type system does not support the building of new types by extending primitives.
 
