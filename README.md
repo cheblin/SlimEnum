@@ -106,7 +106,7 @@ class Test {
 ```java
 public class Main {
 	
-	public static void main( String[] args ) {
+	public static void main( String[] args )  {
 		Test.createFont( Font.Monospaced + Font.HonMincho, Font.BLINK, Font.Background.CYAN, Font.Foreground.BLACK );
 		@Font String         name = Font.Helvetica;
 		@Font byte           type = Font.NORMAL | Font.BOLD | Font.INVERSE;
