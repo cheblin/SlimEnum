@@ -3,6 +3,7 @@
 # SlimEnum Changelog
 
 ## [Unreleased]
+## [0.0.6]
 ### Added
 
 ### Changed
