@@ -21,8 +21,9 @@ arguments and return type.
 
 With this plugin, IDE gets smart code completion capability.
 
-SlimEnum is alternative approach, especially good in the case when performance is a concern and primitive constants can be better used.
-SlimEnum is not a total replacement for Java language embedded enums, of course.
+SlimEnum is alternative approach, especially good in the case when performance is a concern and primitive constants can be better used.  
+SlimEnum is not a total replacement for Java language embedded enums, of course.  
+SlimEnum is similar to but not the same as [IntDef](https://developer.android.com/reference/androidx/annotation/IntDef) in Android. 
 <!-- Plugin description end -->
 
 ## Step-by-step guide
