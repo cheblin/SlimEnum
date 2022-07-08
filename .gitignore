@@ -2,3 +2,5 @@
 .idea
 .qodana
 build
+
+/.run/Run IDE with Plugin.run.xml

@@ -1,5 +1,5 @@
 // Copyright 2021 the original author or authors
-package org.unirail.SlimEnum
+package xyz.unirail.SlimEnum
 
 import com.intellij.codeInsight.AnnotationUtil
 import com.intellij.codeInsight.completion.*
@@ -8,6 +8,7 @@ import com.intellij.codeInsight.lookup.VariableLookupItem
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.*
 import com.intellij.psi.util.PsiTreeUtil
+import com.intellij.psi.util.parentOfType
 import com.intellij.util.ProcessingContext
 import org.jetbrains.annotations.NotNull
 
@@ -62,47 +63,15 @@ class SlimEnumCompletion : CompletionContributor() {
 
                         is PsiMethodCallExpression -> {
 
-                            e.methodExpression.resolve()?.let {
-
-                                val declared_method = it as PsiMethod
-
-                                val declared_params = declared_method.parameterList.parameters
-
-                                if (declared_params.isNotEmpty()) {
-
-                                    val args = e.argumentList
-                                    val editPosArg = PsiTreeUtil.findFirstParent(expr_at_edit_pos) { par -> par.parent == args }
-
-                                    var index = 0
-                                    var arg_expr = editPosArg
-
-                                    var ch = e.argumentList.firstChild
-                                    val last = e.argumentList.lastChild
-                                    var exit = false
-
-                                    while (ch != last) {
-
-                                        when {
-                                            ch.node.elementType.index.toInt() == 680 -> { //COMMA
-                                                if (exit) break
-                                                arg_expr = editPosArg
-                                                index++
-                                            }
-
-                                            ch is PsiExpression && ch.type != null -> arg_expr = e //typed expression
-                                        }
-
-                                        if (ch == editPosArg) exit = true
-
-                                        ch = ch.nextSibling
-                                    }
-
-
-                                    val param = declared_params[index]
-                                    fill(AnnotationUtil.getAllAnnotations(param, true, null), param.type, collect(arg_expr), dst)
+                            val methodArg = parameters.position.parentOfType<PsiReferenceExpression>()
+                            e.resolveMethod()?.let { method ->
+                                val methodArgIndex = e.argumentList.expressions.indexOf(methodArg)
+                                if (-1 < methodArgIndex) {
+                                    val declaredParams = method.parameterList.parameters
+                                    val argParam = declaredParams[methodArgIndex]
+                                    fill(AnnotationUtil.getAllAnnotations(argParam, true, null), argParam.type, collect(methodArg), dst)
                                 }
                             }
-
                             true
                         }
 
