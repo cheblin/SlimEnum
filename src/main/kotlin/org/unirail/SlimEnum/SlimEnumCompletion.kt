@@ -1,5 +1,5 @@
 // Copyright 2021 the original author or authors
-package xyz.unirail.SlimEnum
+package org.unirail.SlimEnum
 
 import com.intellij.codeInsight.AnnotationUtil
 import com.intellij.codeInsight.completion.*
@@ -63,9 +63,11 @@ class SlimEnumCompletion : CompletionContributor() {
 
                         is PsiMethodCallExpression -> {
 
-                            val methodArg = parameters.position.parentOfType<PsiReferenceExpression>()
+                            val args =  e.argumentList //method call arguments
+                            val methodArg = PsiTreeUtil.findFirstParent(expr_at_edit_pos) { par -> par.parent == args }
+
                             e.resolveMethod()?.let { method ->
-                                val methodArgIndex = e.argumentList.expressions.indexOf(methodArg)
+                                val methodArgIndex = args.expressions.indexOf(methodArg)
                                 if (-1 < methodArgIndex) {
                                     val declaredParams = method.parameterList.parameters
                                     val argParam = declaredParams[methodArgIndex]
