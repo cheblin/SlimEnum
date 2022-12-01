@@ -1,15 +1,13 @@
 <idea-plugin>
     <id>org.unirail.SlimEnum</id>
     <name>SlimEnum</name>
-    <version>0.0.6</version>
+    <version>0.0.10</version>
     <vendor email="info@unirail.org" url="https://github.com/cheblin/SlimEnum">Chikirev Sirguy, Unirail Group</vendor>
 
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
-    <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.platform</depends>
-    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="JAVA"    implementationClass="org.unirail.SlimEnum.SlimEnumCompletion"/>
