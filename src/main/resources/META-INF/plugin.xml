@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>org.unirail.SlimEnum</id>
+    <id>xyz.unirail.SlimEnum</id>
     <name>SlimEnum</name>
-    <version>0.0.10</version>
+    <version>0.0.11</version>
     <vendor email="info@unirail.org" url="https://github.com/cheblin/SlimEnum">Chikirev Sirguy, Unirail Group</vendor>
 
 
@@ -10,7 +10,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <completion.contributor language="JAVA"    implementationClass="org.unirail.SlimEnum.SlimEnumCompletion"/>
+        <completion.contributor language="JAVA"    implementationClass="xyz.unirail.SlimEnum.SlimEnumCompletion"/>
     </extensions>
 
 </idea-plugin>
