@@ -1,7 +1,12 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# xxx Changelog
+# SlimEnum Changelog
 
 ## [Unreleased]
-### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+### Changed
+
+- Remove the `until-build` upper bound from the plugin descriptor. SlimEnum
+  uses only stable Java PSI and `CompletionContributor` APIs, so the same
+  artifact works on every current and future IntelliJ build (2025.2, 2025.3,
+  2026.1, and onward) without chasing IDE release numbers.
