@@ -1,6 +1,7 @@
+.DS_Store
 .gradle
 .idea
-.qodana
+.intellijPlatform
+.kotlin
 build
-
-/.run/Run IDE with Plugin.run.xml
+.claude
