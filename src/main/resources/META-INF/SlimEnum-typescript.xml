@@ -1,0 +1,7 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="TypeScript"
+                                implementationClass="org.unirail.SlimEnum.SlimStructTypeScript"
+                                order="first"/>
+    </extensions>
+</idea-plugin>

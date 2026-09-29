@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>org.unirail.SlimEnum</id>
+    <vendor email="info@unirail.org" url="https://github.com/cheblin/SlimEnum">Chikirev Sirguy, Unirail Group</vendor>
+
+
+    <!-- Product and plugin compatibility requirements -->
+    <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <!-- SlimStruct in TypeScript: only where the JavaScript plugin is - IntelliJ IDEA Ultimate, WebStorm -->
+    <depends optional="true" config-file="SlimEnum-typescript.xml">JavaScript</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="JAVA"
+                                implementationClass="org.unirail.SlimEnum.SlimEnumCompletion"
+                                order="first"/>
+    </extensions>
+
+</idea-plugin>
